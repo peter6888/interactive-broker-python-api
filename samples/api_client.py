@@ -3,8 +3,8 @@ from ibw.client import IBClient
 
 # Create a new session of the IB Web API.
 ib_client = IBClient(
-    username="PAPER_USERNAME",
-    account="PAPER_ACCOUNT_ACCOUNT_NUMBER",
+    username="aegis888",
+    account="U3924295",
     is_server_running=True
 )
 
@@ -18,7 +18,7 @@ pprint('')
 
 # grab account portfolios
 account_positions = ib_client.portfolio_account_positions(
-    account_id="PAPER_ACCOUNT_ACCOUNT_NUMBER",
+    account_id="U3924295",
     page_id=0
 )
 
@@ -26,9 +26,9 @@ pprint(account_positions)
 pprint('')
 
 # grab account PNL
-account_pnl = ib_client.server_account_pnl()
-pprint(account_pnl)
-pprint('')
+# account_pnl = ib_client.server_account_pnl()
+# pprint(account_pnl)
+# pprint('')
 
 # grab server accounts
 server_accounts = ib_client.server_accounts()
@@ -81,14 +81,14 @@ pprint('')
 
 # Grab Account Info
 portfolio_account_info = ib_client.portfolio_account_info(
-    account_id="PAPER_ACCOUNT_ACCOUNT_NUMBER"
+    account_id="U3924295"
 )
 pprint(portfolio_account_info)
 pprint('')
 
 # Grab the Positions in the portfolio.
 portfolio_positions = ib_client.portfolio_account_positions(
-    account_id="PAPER_ACCOUNT_ACCOUNT_NUMBER",
+    account_id="U3924295",
     page_id=0
 )
 pprint(portfolio_positions)
@@ -96,7 +96,7 @@ pprint('')
 
 # Grab the Specific Postion in a Portfolio.
 portfolio_position = ib_client.portfolio_account_position(
-    account_id="PAPER_ACCOUNT_ACCOUNT_NUMBER",
+    account_id="U3924295",
     conid=272093
 )
 pprint(portfolio_position)
@@ -104,80 +104,80 @@ pprint('')
 
 # Grab a Summary of the Portfolio.
 portfolio_summary = ib_client.portfolio_account_summary(
-    account_id="PAPER_ACCOUNT_ACCOUNT_NUMBER"
+    account_id="U3924295"
 )
 pprint(portfolio_summary)
 pprint('')
 
 # Grab the Portfolio Ledger.
 portfolio_ledger = ib_client.portfolio_account_ledger(
-    account_id="PAPER_ACCOUNT_ACCOUNT_NUMBER"
+    account_id="U3924295"
 )
 pprint(portfolio_ledger)
 pprint('')
 
 # Grab the portfolio Allocation.
 portfolio_allocation = ib_client.portfolio_account_allocation(
-    account_id="PAPER_ACCOUNT_ACCOUNT_NUMBER"
+    account_id="U3924295"
 )
 pprint(portfolio_allocation)
 pprint('')
 
 # Grab Portfolio Allocations.
-portfolio_allocations = ib_client.portfolio_accounts_allocation(
-    account_ids="PAPER_ACCOUNT_ACCOUNT_NUMBER"
-)
-pprint(portfolio_allocations)
-pprint('')
+# portfolio_allocations = ib_client.portfolio_accounts_allocation(
+#     account_ids="U3924295"
+# )
+# pprint(portfolio_allocations)
+# pprint('')
 
 # Grab Customer Info.
-customer_info = ib_client.customer_info()
-pprint(customer_info)
-pprint('')
+# customer_info = ib_client.customer_info()
+# pprint(customer_info)
+# pprint('')
 
 # Get the number of Unread messages.
-unread_messages = ib_client.get_unread_messages()
-unread_for_bn = unread_messages['BN']
-pprint(unread_messages)
-pprint('')
+# unread_messages = ib_client.get_unread_messages()
+# unread_for_bn = unread_messages['BN']
+# pprint(unread_messages)
+# pprint('')
 
 # Grab the Subscriptions Codes.
-subscriptions = ib_client.get_subscriptions()
-pprint(subscriptions)
-pprint('')
+# subscriptions = ib_client.get_subscriptions()
+# pprint(subscriptions)
+# pprint('')
 
 # Grab the Delivery Options for a Subscription.
-subscriptions_delivery = ib_client.subscriptions_delivery_options()
-pprint(subscriptions_delivery)
-pprint('')
+# subscriptions_delivery = ib_client.subscriptions_delivery_options()
+# pprint(subscriptions_delivery)
+# pprint('')
 
 # Grab a Discaimer for a specific Subscription.
-sub_code = 'M8'
-subscriptions_disclaimer = ib_client.subscriptions_disclaimer(
-    type_code=sub_code
-)
-pprint(subscriptions_disclaimer)
-pprint('')
+# sub_code = 'M8'
+# subscriptions_disclaimer = ib_client.subscriptions_disclaimer(
+#     type_code=sub_code
+# )
+# pprint(subscriptions_disclaimer)
+# pprint('')
 
 # Define a Mutual Fund Contract ID.
-mutual_fund_conid = '10753238'
+# mutual_fund_conid = '10753238'
 
-# Grab Fees and Objectives.
-mutual_fund_fees = ib_client.mutual_funds_portfolios_and_fees(
-    conid=mutual_fund_conid
-)
-pprint(mutual_fund_fees)
-pprint('')
+# # Grab Fees and Objectives.
+# mutual_fund_fees = ib_client.mutual_funds_portfolios_and_fees(
+#     conid=mutual_fund_conid
+# )
+# pprint(mutual_fund_fees)
+# pprint('')
 
 # Possible Values for Performance.
-POSSIBLE_VALUES = ['6M', '1Y', '3Y', '5Y', '10Y']
+# POSSIBLE_VALUES = ['6M', '1Y', '3Y', '5Y', '10Y']
 
-# Grab Performance.
-mutual_fund_ratings = ib_client.mutual_funds_performance(
-    conid=mutual_fund_conid,
-    risk_period='6M',
-    yield_period='6M',
-    statistic_period='6M'
-)
-pprint(mutual_fund_ratings)
-pprint('')
+# # Grab Performance.
+# mutual_fund_ratings = ib_client.mutual_funds_performance(
+#     conid=mutual_fund_conid,
+#     risk_period='6M',
+#     yield_period='6M',
+#     statistic_period='6M'
+# )
+# pprint(mutual_fund_ratings)
+# pprint('')

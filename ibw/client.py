@@ -646,7 +646,7 @@ class IBClient():
             urllib.parse.urljoin(
                 self.ib_gateway_path,
                 self.api_version
-            ) + r'portal/' + endpoint
+            ) + r'api/' + endpoint
         )
 
     def _make_request(self, endpoint: str, req_type: str, headers: str = 'json', params: dict = None, data: dict = None, json: dict = None) -> Dict:
@@ -719,7 +719,7 @@ class IBClient():
             return data
 
         # if it was a bad request print it out.
-        elif not response.ok and url != 'https://localhost:5000/v1/portal/iserver/account':
+        elif not response.ok and url != 'https://localhost:5000/v1/api/iserver/account':
             print(url)
             raise requests.HTTPError()
 
